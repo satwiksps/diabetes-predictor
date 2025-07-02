@@ -1,6 +1,6 @@
 import joblib
 import numpy as np
-from app.schema import DiabetesInput
+from .schema import DiabetesInput  # <-- Fixed relative import
 
 def load_model(model_path: str = "diabetes_model.pkl"):
     """
@@ -11,7 +11,9 @@ def load_model(model_path: str = "diabetes_model.pkl"):
         print("Model loaded successfully")
         return model
     except FileNotFoundError:
-        raise RuntimeError("Model file not found. Please train the model first.")
+        print(f"Error: Model file not found at {model_path}")
+        print("Please train the model first by running: python -m app.training.trainer")
+        raise RuntimeError("Model file not found.")
 
 def predict_diabetes(model, data: DiabetesInput) -> bool:
     """
