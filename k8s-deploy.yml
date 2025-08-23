@@ -16,6 +16,13 @@ spec:
     spec:
       containers:
         - name: diabetes-api
+          #
+          # ---------------------------------------------------------------
+          # !!! IMPORTANT !!!
+          # Change this image path to your own Docker Hub/GCR/ECR repository
+          # e.g., your-dockerhub-username/mlops-diabetes-predictor:latest
+          # ---------------------------------------------------------------
+          #
           image: your-dockerhub-username/mlops-diabetes-predictor:latest
           ports:
             - containerPort: 8000
@@ -30,6 +37,6 @@ spec:
     app: diabetes-predictor
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8000
+      port: 80       # Expose the service on port 80 (standard HTTP)
+      targetPort: 8000 # Forward traffic to the container's port 8000
   type: LoadBalancer
