@@ -16,14 +16,7 @@ spec:
     spec:
       containers:
         - name: diabetes-api
-          #
-          # ---------------------------------------------------------------
-          # !!! IMPORTANT !!!
-          # Change this image path to your own Docker Hub/GCR/ECR repository
-          # e.g., your-dockerhub-username/mlops-diabetes-predictor:latest
-          # ---------------------------------------------------------------
-          #
-          image: your-dockerhub-username/mlops-diabetes-predictor:latest
+          image: your-username/mlops-diabetes-predictor:latest
           ports:
             - containerPort: 8000
           imagePullPolicy: Always
