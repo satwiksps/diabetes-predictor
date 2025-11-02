@@ -13,7 +13,48 @@ An end-to-end MLOps project that trains and deploys a machine learning model to 
 - **Dataset:** Pima Indians Diabetes Dataset
 
 ---
+## 🚀 API Demo
 
+The API provides two main endpoints and interactive documentation powered by Swagger UI.
+
+### 1. Root Endpoint (`/`)
+A simple health check endpoint to confirm the API is running.
+
+![API Root](assets/api.png)
+
+### 2. Prediction Endpoint (`/docs`)
+The interactive documentation allows you to easily test the `/predict` endpoint.
+
+![API Docs](assets/response.png)
+
+### 3. Example Prediction
+You can send the patient's data as a JSON object to the `/predict` endpoint and receive a boolean prediction.
+
+![API Prediction](assets/input.png)
+
+---
+
+## 🧠 Machine Learning Model
+
+This project uses a supervised machine learning model to perform a binary classification task (diabetic or not diabetic).
+
+### Dataset
+The model is trained on the **Pima Indians Diabetes Dataset**, a standard dataset from the UCI Machine Learning Repository. It contains health data for female patients of Pima Indian heritage.
+
+### Features
+To keep the model lightweight and fast for an API, we use the following **5 features**:
+* `Pregnancies`: Number of times pregnant
+* `Glucose`: Plasma glucose concentration
+* `BloodPressure`: Diastolic blood pressure (mm Hg)
+* `BMI`: Body mass index (weight in kg/(height in m)^2)
+* `Age`: Age (years)
+
+### Model
+The model is a **Random Forest Classifier** from `scikit-learn`.
+
+A Random Forest is an **ensemble learning** method. Instead of relying on a single decision tree, it builds many individual decision trees during training. When making a prediction, it collects the "vote" from each tree and chooses the class (diabetic or not) that receives the most votes. This approach is highly effective, more accurate than a single tree, and helps prevent overfitting.
+
+---
 ## 📁 Project Structure
 
 ```bash
